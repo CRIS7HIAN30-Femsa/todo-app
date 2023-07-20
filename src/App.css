@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -35,4 +39,66 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.todo-list div{
+  height: 30px;
+}
+
+.todo-list h1{
+  font-size: 4em;
+  font-weight: 800;
+  color: whitesmoke;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.todo-list span{
+  color: aliceblue;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.todo-list input[type="checkbox"]{
+  place-content: center;
+}
+
+.todo-list input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.todo-list input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.todo-list form{
+  width: 100%;
+}
+
+.todo-list form input{
+  height: 25px;
+  width: 70%;
+  padding: 5px;
+}
+
+.todo-list form button{
+  padding: 12px;
+  background-color: paleturquoise;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
 }
